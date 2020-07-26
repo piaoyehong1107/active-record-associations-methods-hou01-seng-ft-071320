@@ -17,7 +17,7 @@ class Song < ActiveRecord::Base
       end
       
       if names.include? "Drake"
-        self.artist=Artist.where(name:"Drake")
+        self.artist=Artist.find_by(name:"Drake")
       else 
         newartist = Artist.create(name:"Drake")
         self.artist = newartist
